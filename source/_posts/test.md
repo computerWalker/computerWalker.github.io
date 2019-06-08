@@ -51,3 +51,8 @@ int main(){
 下面进行实际测试，我会在mac电脑上配置git，然后clone下来git库进行修改和推送
 问题：
 1：mac上是否也需要安装node
+
+实际操作：
+现在在mac上安装了node、hexo
+配置好了git
+现在使用mac电脑修改博客内容，然后使用hexo推送git库，并且将原文件推送到hexo分支上！！！
