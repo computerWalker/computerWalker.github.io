@@ -60,3 +60,15 @@ int main(){
 }
 ```  
 <font color=#DC143c>需要注意的是，结构体是一种自定义的数据类型，是创建变量的模板，不占用内存空间；结构体变量才包含了实实在在的数据，需要内存空间来存储。</font>
+
+### 一些知识点  
+malloc函数：  
+动态内存分配，默认创建出来是void\*类型，需要强制类型转换   
+`struct Node* headNode = (struct Node*)malloc(sizeof(struct Node))`
+一般需要配合free使用
+
+文件的读写操作：   
+FILE\* file类型的指针  
+fopen(文件名，打开方式)  
+fclose(FILE\*)  
+
