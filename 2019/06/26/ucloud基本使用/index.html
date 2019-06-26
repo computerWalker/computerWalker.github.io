@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ucloud基本使用 | 飞天大侠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是对象储存？对象存储（UFile）是为互联网应用提供非结构化文件存储的服务；相对于传统硬盘存储，对象存储具有存储无上限、支持高并发访问、成本更低等优势；解决业务架构的文件存储问题，有效降低海量文件的存储成本，支持热点数据的高并发访问，提升终端用户访问体验。核心概念：单地域空间管理单地域对象存储服务能够解决业务架构的文件存储问题，为用户上传的数据创建多份副本并实现跨机房存储。   对象存储空间（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ucloud基本使用">
+<meta property="og:url" content="http://yoursite.com/2019/06/26/ucloud基本使用/index.html">
+<meta property="og:site_name" content="飞天大侠的博客">
+<meta property="og:description" content="什么是对象储存？对象存储（UFile）是为互联网应用提供非结构化文件存储的服务；相对于传统硬盘存储，对象存储具有存储无上限、支持高并发访问、成本更低等优势；解决业务架构的文件存储问题，有效降低海量文件的存储成本，支持热点数据的高并发访问，提升终端用户访问体验。核心概念：单地域空间管理单地域对象存储服务能够解决业务架构的文件存储问题，为用户上传的数据创建多份副本并实现跨机房存储。   对象存储空间（">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-26T07:49:25.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ucloud基本使用">
+<meta name="twitter:description" content="什么是对象储存？对象存储（UFile）是为互联网应用提供非结构化文件存储的服务；相对于传统硬盘存储，对象存储具有存储无上限、支持高并发访问、成本更低等优势；解决业务架构的文件存储问题，有效降低海量文件的存储成本，支持热点数据的高并发访问，提升终端用户访问体验。核心概念：单地域空间管理单地域对象存储服务能够解决业务架构的文件存储问题，为用户上传的数据创建多份副本并实现跨机房存储。   对象存储空间（">
+  
+    <link rel="alternate" href="/atom.xml" title="飞天大侠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">飞天大侠的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ucloud基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/26/ucloud基本使用/" class="article-date">
+  <time datetime="2019-06-26T03:21:02.000Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ucloud基本使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是对象储存？"><a href="#什么是对象储存？" class="headerlink" title="什么是对象储存？"></a>什么是对象储存？</h3><p>对象存储（UFile）是为互联网应用提供非结构化文件存储的服务；相对于传统硬盘存储，对象存储具有存储无上限、支持高并发访问、成本更低等优势；解决业务架构的文件存储问题，有效降低海量文件的存储成本，支持热点数据的高并发访问，提升终端用户访问体验。<br>核心概念：<br>单地域空间管理<br>单地域对象存储服务能够解决业务架构的文件存储问题，为用户上传的数据创建多份副本并实现跨机房存储。  </p>
+<h3 id="对象存储空间（Bucket）"><a href="#对象存储空间（Bucket）" class="headerlink" title="对象存储空间（Bucket）"></a>对象存储空间（Bucket）</h3><p>对象存储空间（简称存储空间）是文件的组织管理单位，一个文件必然位于某个空间中。空间名称全局唯一，且无法进行修改。 每个账号最多可以创建20个存储空间，存储空间内文件数量无限制，单个文件最大5TB。 用户可以将存储空间设置为公开或私有，以控制存储空间内文件的访问权限。</p>
+<p>对象存储空间命名规范<br>     1.仅包含小写字母，数字和连字符（-）<br>     2.必须以小写字母或者数字开头<br>     3.长度必须在6-63字节之间。</p>
+<h4 id="文件（File）"><a href="#文件（File）" class="headerlink" title="文件（File）"></a>文件（File）</h4><p>文件是存储空间的逻辑存储单元。对于每个账号，该账号里存放的每个文件都有唯一的一对存储空间（Bucket）与键（Key）作为标识。PUT方式上传文件大小最大为5 TB。</p>
+<h4 id="文件名（Key）"><a href="#文件名（Key）" class="headerlink" title="文件名（Key）"></a>文件名（Key）</h4><p>文件名是对应文件的名称，在存储空间中全局唯一，每个文件名在存储空间均标识了一个文件，写入文件时，用户可以自定义文件名。上传同样文件名的文件，会导致原文件名文件被覆盖。 使用者在下载文件时只需要知道下载出口的域名，而无需了解文件具体会被存放到哪个机房的哪个设备，也无需知道具体存放形式。只需在浏览器输入对应的URL访问即可</p>
+<h3 id="文件名命名规范"><a href="#文件名命名规范" class="headerlink" title="文件名命名规范"></a>文件名命名规范</h3><pre><code>1.使用UTF-8编码
+2.长度必须在1-1023字节之间
+3.可以“/”字符开头，但不允许出现“{}^[]&lt;&gt;\#\~\%”。</code></pre><h3 id="cloud提供了命令行工具"><a href="#cloud提供了命令行工具" class="headerlink" title="cloud提供了命令行工具"></a>cloud提供了命令行工具</h3><pre><code>bucketmgr：用来操作bucket，增删改查
+filemgr：用来处理文件相关：上传、下载、删除等</code></pre><p>ucloud提供了多语言的API<br>ucloud提供了基本的命令行工具和python api<br>写了基本上传工具、下载工具，使用python api，调用非常方便  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基本设置</span></span><br><span class="line">config.set_default(uploadsuffix=<span class="string">'.hk.ufileos.com'</span>)</span><br><span class="line">config.set_default(downloadsuffix=<span class="string">'.ufile.ucloud.com.cn'</span>)</span><br><span class="line">config.set_default(connection_timeout=<span class="number">60</span>)</span><br><span class="line">config.set_default(expires=<span class="number">60</span>)</span><br><span class="line"><span class="comment">#日志设置</span></span><br><span class="line"></span><br><span class="line">DATA = datetime.datetime.now().isocalendar()</span><br><span class="line">BUCKETNAME = <span class="string">"%d-week-%d"</span>%(DATA[<span class="number">0</span>], DATA[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># print bucket_name</span></span><br><span class="line">locallogname = <span class="string">'/mnt/proj/trash/log/tools/ste/%s.log'</span>%BUCKETNAME <span class="comment">#完整本地日志文件名</span></span><br><span class="line">logger.set_log_file(locallogname)</span><br><span class="line"></span><br><span class="line">public_key = <span class="string">'SzA832cU69RahCifWwsChN0rFiv3aKIRd+2Ij+1/t9tXLVmjLhoPnw=='</span>         <span class="comment">#账户公私钥中的公钥</span></span><br><span class="line">private_key = <span class="string">'f3c0015184207cd89159236058c5f70abd2ca944'</span>        <span class="comment">#账户公私钥中的私钥</span></span><br><span class="line">region = <span class="string">'hk'</span></span><br><span class="line"><span class="comment">#关键的入口</span></span><br><span class="line">bucketmanager = bucketmanager.BucketManager(public_key, private_key)</span><br><span class="line">filemanager = filemanager.FileManager(public_key, private_key)</span><br><span class="line">multipartuploadufile_handler = multipartuploadufile.MultipartUploadUFile(public_key, private_key)</span><br><span class="line"><span class="comment">#获取指定bucket下所有的文件列表，默认限制是20个</span></span><br><span class="line">ret, resp = self.bucketmanager.getfilelist(self.bucket, limit=<span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/26/ucloud基本使用/" data-id="cjxcod6gn00035is0zf1k1gsp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/26/ucloud基本使用/">ucloud基本使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/09/遇到的一些知识/">遇到的一些知识</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/c语言链表实例/">c语言链表实例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/使用hexo搭建博客/">使用hexo搭建博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 lingbo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

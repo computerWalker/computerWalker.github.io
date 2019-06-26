@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>飞天大侠的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="飞天大侠的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="飞天大侠的博客">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="飞天大侠的博客">
+  
+    <link rel="alternate" href="/atom.xml" title="飞天大侠的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">飞天大侠的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-ucloud基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/26/ucloud基本使用/" class="article-date">
+  <time datetime="2019-06-26T03:21:02.000Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/26/ucloud基本使用/">ucloud基本使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是对象储存？"><a href="#什么是对象储存？" class="headerlink" title="什么是对象储存？"></a>什么是对象储存？</h3><p>对象存储（UFile）是为互联网应用提供非结构化文件存储的服务；相对于传统硬盘存储，对象存储具有存储无上限、支持高并发访问、成本更低等优势；解决业务架构的文件存储问题，有效降低海量文件的存储成本，支持热点数据的高并发访问，提升终端用户访问体验。<br>核心概念：<br>单地域空间管理<br>单地域对象存储服务能够解决业务架构的文件存储问题，为用户上传的数据创建多份副本并实现跨机房存储。  </p>
+<h3 id="对象存储空间（Bucket）"><a href="#对象存储空间（Bucket）" class="headerlink" title="对象存储空间（Bucket）"></a>对象存储空间（Bucket）</h3><p>对象存储空间（简称存储空间）是文件的组织管理单位，一个文件必然位于某个空间中。空间名称全局唯一，且无法进行修改。 每个账号最多可以创建20个存储空间，存储空间内文件数量无限制，单个文件最大5TB。 用户可以将存储空间设置为公开或私有，以控制存储空间内文件的访问权限。</p>
+<p>对象存储空间命名规范<br>     1.仅包含小写字母，数字和连字符（-）<br>     2.必须以小写字母或者数字开头<br>     3.长度必须在6-63字节之间。</p>
+<h4 id="文件（File）"><a href="#文件（File）" class="headerlink" title="文件（File）"></a>文件（File）</h4><p>文件是存储空间的逻辑存储单元。对于每个账号，该账号里存放的每个文件都有唯一的一对存储空间（Bucket）与键（Key）作为标识。PUT方式上传文件大小最大为5 TB。</p>
+<h4 id="文件名（Key）"><a href="#文件名（Key）" class="headerlink" title="文件名（Key）"></a>文件名（Key）</h4><p>文件名是对应文件的名称，在存储空间中全局唯一，每个文件名在存储空间均标识了一个文件，写入文件时，用户可以自定义文件名。上传同样文件名的文件，会导致原文件名文件被覆盖。 使用者在下载文件时只需要知道下载出口的域名，而无需了解文件具体会被存放到哪个机房的哪个设备，也无需知道具体存放形式。只需在浏览器输入对应的URL访问即可</p>
+<h3 id="文件名命名规范"><a href="#文件名命名规范" class="headerlink" title="文件名命名规范"></a>文件名命名规范</h3><pre><code>1.使用UTF-8编码
+2.长度必须在1-1023字节之间
+3.可以“/”字符开头，但不允许出现“{}^[]&lt;&gt;\#\~\%”。</code></pre><h3 id="cloud提供了命令行工具"><a href="#cloud提供了命令行工具" class="headerlink" title="cloud提供了命令行工具"></a>cloud提供了命令行工具</h3><pre><code>bucketmgr：用来操作bucket，增删改查
+filemgr：用来处理文件相关：上传、下载、删除等</code></pre><p>ucloud提供了多语言的API<br>ucloud提供了基本的命令行工具和python api<br>写了基本上传工具、下载工具，使用python api，调用非常方便  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基本设置</span></span><br><span class="line">config.set_default(uploadsuffix=<span class="string">'.hk.ufileos.com'</span>)</span><br><span class="line">config.set_default(downloadsuffix=<span class="string">'.ufile.ucloud.com.cn'</span>)</span><br><span class="line">config.set_default(connection_timeout=<span class="number">60</span>)</span><br><span class="line">config.set_default(expires=<span class="number">60</span>)</span><br><span class="line"><span class="comment">#日志设置</span></span><br><span class="line"></span><br><span class="line">DATA = datetime.datetime.now().isocalendar()</span><br><span class="line">BUCKETNAME = <span class="string">"%d-week-%d"</span>%(DATA[<span class="number">0</span>], DATA[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># print bucket_name</span></span><br><span class="line">locallogname = <span class="string">'/mnt/proj/trash/log/tools/ste/%s.log'</span>%BUCKETNAME <span class="comment">#完整本地日志文件名</span></span><br><span class="line">logger.set_log_file(locallogname)</span><br><span class="line"></span><br><span class="line">public_key = <span class="string">'SzA832cU69RahCifWwsChN0rFiv3aKIRd+2Ij+1/t9tXLVmjLhoPnw=='</span>         <span class="comment">#账户公私钥中的公钥</span></span><br><span class="line">private_key = <span class="string">'f3c0015184207cd89159236058c5f70abd2ca944'</span>        <span class="comment">#账户公私钥中的私钥</span></span><br><span class="line">region = <span class="string">'hk'</span></span><br><span class="line"><span class="comment">#关键的入口</span></span><br><span class="line">bucketmanager = bucketmanager.BucketManager(public_key, private_key)</span><br><span class="line">filemanager = filemanager.FileManager(public_key, private_key)</span><br><span class="line">multipartuploadufile_handler = multipartuploadufile.MultipartUploadUFile(public_key, private_key)</span><br><span class="line"><span class="comment">#获取指定bucket下所有的文件列表，默认限制是20个</span></span><br><span class="line">ret, resp = self.bucketmanager.getfilelist(self.bucket, limit=<span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/26/ucloud基本使用/" data-id="cjxcod6gn00035is0zf1k1gsp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/26/hello-world/" class="article-date">
+  <time datetime="2019-06-26T02:29:50.991Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/26/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/26/hello-world/" data-id="cjxcod6gk00015is0utyz3tzt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-遇到的一些知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/09/遇到的一些知识/" class="article-date">
+  <time datetime="2019-06-09T06:42:12.000Z" itemprop="datePublished">2019-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/09/遇到的一些知识/">遇到的一些知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="typedef是干什么的？"><a href="#typedef是干什么的？" class="headerlink" title="typedef是干什么的？"></a>typedef是干什么的？</h2><h3 id="typedef用来定义自己习惯的数据类型的名称"><a href="#typedef用来定义自己习惯的数据类型的名称" class="headerlink" title="typedef用来定义自己习惯的数据类型的名称"></a>typedef用来定义自己习惯的数据类型的名称</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> BOLL;  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TURE 1;  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FASLE 0；</span></span><br><span class="line"><span class="comment">//how to use  </span></span><br><span class="line">BOOL flag=TRUE;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在什么情况下会使用到typedef？"><a href="#在什么情况下会使用到typedef？" class="headerlink" title="在什么情况下会使用到typedef？"></a>在什么情况下会使用到<strong>typedef</strong>？</h3><h4 id="1：为基础的数据类型定义新的名字，在跨平台时只要修改typedef即可"><a href="#1：为基础的数据类型定义新的名字，在跨平台时只要修改typedef即可" class="headerlink" title="1：为基础的数据类型定义新的名字，在跨平台时只要修改typedef即可"></a>1：为基础的数据类型定义新的名字，在跨平台时只要修改typedef即可</h4><h4 id="2：为自定义的数据类型（结构体、共用体、枚举）定义简介的类型名称"><a href="#2：为自定义的数据类型（结构体、共用体、枚举）定义简介的类型名称" class="headerlink" title="2：为自定义的数据类型（结构体、共用体、枚举）定义简介的类型名称"></a>2：为自定义的数据类型（结构体、共用体、枚举）定义简介的类型名称</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接定义struct</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	<span class="keyword">double</span> z;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//使用struct,需要保留struct关键字</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">pt1</span>=&#123;</span><span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">pt2</span>;</span></span><br><span class="line"><span class="comment">//使用typedef,相当于执行了两个恶操作：</span></span><br><span class="line"><span class="comment">//定义一个tagPoint的struct，为tagPoint起了一个别名：</span></span><br><span class="line"><span class="comment">//typedef struct tagPoint Point;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPoint</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	<span class="keyword">double</span> z;</span><br><span class="line">&#125;Point;</span><br><span class="line"><span class="comment">//下面就可以直接使用Point了！而不用使用struct关键字</span></span><br><span class="line">Point pt1=&#123;<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>&#125;;</span><br><span class="line">Point pt2;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3：给数组定义简洁的名字"><a href="#3：给数组定义简洁的名字" class="headerlink" title="3：给数组定义简洁的名字"></a>3：给数组定义简洁的名字</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> INT_ARRAY_100[<span class="number">100</span>];</span><br><span class="line">INT_ARRAY_100 arr;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4：给指针定义简洁的名字"><a href="#4：给指针定义简洁的名字" class="headerlink" title="4：给指针定义简洁的名字"></a>4：给指针定义简洁的名字</h4><p>只要为指针声明 typedef，那么就应该在最终的 typedef 名称中加一个 const，以使得该指针本身是常量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* PCHAR;</span><br><span class="line">PCHAR pa;</span><br><span class="line"><span class="keyword">int</span> *(*a[<span class="number">5</span>])(<span class="keyword">int</span>,<span class="keyword">char</span>*);</span><br><span class="line"><span class="comment">// PFun是我们创建的一个类型别名</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> *(*PFun)(<span class="keyword">int</span>,<span class="keyword">char</span>*);</span><br><span class="line"><span class="comment">// 使用定义的新类型来声明对象，等价于int*(*a[5])(int,char*);</span></span><br><span class="line">PFun a[<span class="number">5</span>];</span><br><span class="line"><span class="comment">//这段代码是错误的</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* PCHAR;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> PCHAR,<span class="keyword">const</span> PCHAR)</span></span>;</span><br><span class="line"><span class="comment">//ypedef 是用来定义一种类型的新别名的，它不同于宏，不是简单的字符串替换。</span></span><br><span class="line"><span class="comment">//因此，“const PCHAR”中的 const 给予了整个指针本身常量性，</span></span><br><span class="line"><span class="comment">//也就是形成了常量指针“char*const（一个指向char的常量指针）”。</span></span><br><span class="line"><span class="comment">//即它实际上相当于“char*const”，而不是“const char*（指向常量 char 的指针）”</span></span><br><span class="line"><span class="comment">//修改为：</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keyword">char</span>* PCHAR;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(PCHAR， PCHAR)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题扩展：typedef-和-define-有何异同？"><a href="#问题扩展：typedef-和-define-有何异同？" class="headerlink" title="问题扩展：typedef 和 define 有何异同？"></a>问题扩展：typedef 和 define 有何异同？</h2><h3 id="typedef-和-define-都是为一个对象起一个别名"><a href="#typedef-和-define-都是为一个对象起一个别名" class="headerlink" title="typedef 和 define 都是为一个对象起一个别名"></a>typedef 和 define 都是为一个对象起一个别名</h3><h4 id="区别1：-原理不同"><a href="#区别1：-原理不同" class="headerlink" title="区别1： 原理不同"></a>区别1： 原理不同</h4><p>#define是<strong>预处理</strong>指令，在预处理时候简单机械的将字符串替换，不做正确性检查的<br>typedef是<strong>关键字</strong>，在编译时处理，在自己的作用域内给一个已经存在的类型一个别名<br>但是不能在一个函数中使用typedef，常用来为数组、指针、结构等起别名以方便书写和阅读  </p>
+<h4 id="区别2：-功能不同"><a href="#区别2：-功能不同" class="headerlink" title="区别2： 功能不同"></a>区别2： 功能不同</h4><p>#define 不止可以为类型取名字，还可以定义常量、变量、编译开关等  </p>
+<h4 id="区别3：-作用域不同"><a href="#区别3：-作用域不同" class="headerlink" title="区别3： 作用域不同"></a>区别3： 作用域不同</h4><p>#define没有作用域的限制，typedef有自己的作用域</p>
+<h4 id="区别4：-对指针的操作不同"><a href="#区别4：-对指针的操作不同" class="headerlink" title="区别4： 对指针的操作不同"></a>区别4： 对指针的操作不同</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INTPTR1 int*</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* INTPTR2;</span><br><span class="line">INTPTR1 p1, p2;</span><br><span class="line">INTPTR2 p3, p4;</span><br><span class="line"><span class="comment">//含义分别为，</span></span><br><span class="line"><span class="comment">//声明一个指针变量p1和一个整型变量p2</span></span><br><span class="line"><span class="comment">//声明两个指针变量p3、p4</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INTPTR1 int*</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>* INTPTR2;</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">const</span> INTPTR1 p1 = &amp;a;</span><br><span class="line"><span class="keyword">const</span> INTPTR2 p2 = &amp;b;</span><br><span class="line">INTPTR2 <span class="keyword">const</span> p3 = &amp;c;</span><br><span class="line"></span><br><span class="line"><span class="comment">//上述代码中，</span></span><br><span class="line"><span class="comment">//const INTPTR1 p1是一个常量指针，即不可以通过p1去修改p1指向的内容，但是p1可以指向其他内容。</span></span><br><span class="line"><span class="comment">//const INTPTR2 p2是一个指针常量，不可使p2再指向其他内容。因为INTPTR2表示一个指针类型，因此用const限定，表示封锁了这个指针类型。</span></span><br><span class="line"><span class="comment">//INTPTR2 const p3是一个指针常量</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/09/遇到的一些知识/" data-id="cjxcod6gp00045is0g9cvtp09" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-c语言链表实例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/08/c语言链表实例/" class="article-date">
+  <time datetime="2019-06-08T12:39:23.000Z" itemprop="datePublished">2019-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/08/c语言链表实例/">c语言链表实例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a><a href="https://www.bilibili.com/video/av54554228?from=search&seid=4343468601199547837" target="_blank" rel="noopener">视频教程</a></h4><p>使用c语言编写简单的学生档案管理系统  </p>
+<ol>
+<li><strong>界面</strong>  </li>
+<li><strong>数据操作方法</strong>  </li>
+<li><strong>数据</strong>  </li>
+</ol>
+<p>main函数中绘制了基本界面、交互反应、主函数<br>数据结构是链表，单独的文件写数据结构的操作<br>所有的数据操作会直接操作硬盘上的文件，保证信息的同步  </p>
+<h5 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h5><p>链表是一种数据结构<br>每个链表中元素包含了<strong>数据</strong>、<strong>指向下一个数据的指针</strong><br>链表有一个表头</p>
+<h6 id="链表的操作"><a href="#链表的操作" class="headerlink" title="链表的操作"></a>链表的操作</h6><ol>
+<li>增加，表头插入法，将表头指向新加的元素，新加元素的next指向表头之前指的位置。<br><img src="./%E9%93%BE%E8%A1%A8%E6%8F%92%E5%85%A5.JPG" alt="链表的插入">  </li>
+<li>删除指定位置的数据，把指向这个数据元素的next指向这个数据的next，将这个数据 free 掉。</li>
+<li>查找，从链表头指向的元素开始搜索。</li>
+<li>修改，替换指定位置的数据，直接替换元素中的数据</li>
+</ol>
+<hr>
+<h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><p>c结构体 struct 用来来存放一组不同类型的数据 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">struct_name</span>&#123;</span></span><br><span class="line">	variations;</span><br><span class="line">	<span class="built_in">list</span>;</span><br><span class="line">&#125;; <span class="comment">//注意结尾的分号</span></span><br></pre></td></tr></table></figure>
+
+<p>结构体数组<br>结构体指针</p>
+<p>struct简单实例：</p>
+<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="class"><span class="keyword">struct</span> <span class="title">student</span>{</span>
+    <span class="keyword">char</span> *name;
+    <span class="keyword">int</span> age;
+    <span class="keyword">int</span> score;
+}stu4={(<span class="keyword">char</span>*)<span class="string">"Mick"</span>,<span class="number">12</span>,<span class="number">99</span>};
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    student stu1 = {(<span class="keyword">char</span>*)<span class="string">"jack"</span>,<span class="number">10</span>,<span class="number">90</span>};
+    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,stu1.name);
+    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,stu4.name);
+    stu4.name = (<span class="keyword">char</span>*)<span class="string">"NewName"</span>;
+    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,stu4.name);
+
+    student st2 = {(<span class="keyword">char</span>*)<span class="string">"Lily"</span>,<span class="number">15</span>,<span class="number">95</span>};
+    student *sp = &amp;st2;<span class="comment">//定义一个指向结构体的指针</span>
+    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,sp-&gt;name);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+<p><font color="#DC143c">需要注意的是，结构体是一种自定义的数据类型，是创建变量的模板，不占用内存空间；结构体变量才包含了实实在在的数据，需要内存空间来存储。</font></p>
+<h3 id="一些知识点"><a href="#一些知识点" class="headerlink" title="一些知识点"></a>一些知识点</h3><p>malloc函数：<br>动态内存分配，默认创建出来是void*类型，需要强制类型转换<br><code>struct Node* headNode = (struct Node*)malloc(sizeof(struct Node))</code><br>一般需要配合free使用</p>
+<p>文件的读写操作：<br>FILE* file类型的指针<br>fopen(文件名，打开方式)<br>fclose(FILE*)  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/08/c语言链表实例/" data-id="cjxcod6g300005is0qmzfntt1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-使用hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/08/使用hexo搭建博客/" class="article-date">
+  <time datetime="2019-06-08T07:42:07.000Z" itemprop="datePublished">2019-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/08/使用hexo搭建博客/">使用hexo搭建博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>直接去node.js官方网站下载对应操作系统的安装包。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>查看node版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>查看npm版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br></pre></td></tr></table></figure>
+
+<p>安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>测试hexo是否成功安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>新建一个文件夹，初始化博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装所需软件（没有安装貌似也没事）</p>
+<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>windows上可以安装git bash管理git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list</span><br></pre></td></tr></table></figure>
+
+<p>查看本机的git全局配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your naame"</span></span><br><span class="line">git config --global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+
+<p>配置本机git信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh key-gen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+
+<p>生成本机key，windows电脑默认目录：C:\Users\Administrator\.ssh<br>在github设置当中，添加ssh key（自己理解：一对钥匙和锁头的关系，计算机本机有一把钥匙，在github中设置这把钥匙可以使用，有多台电脑就在每个电脑上新建一个钥匙，然后在github上设置这些钥匙可以使用）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>测试本机是否可以连上git</p>
+<h3 id="配置博客项目"><a href="#配置博客项目" class="headerlink" title="配置博客项目"></a>配置博客项目</h3><h4 id="首先需要安装一个插件“hexo-deployer-git”"><a href="#首先需要安装一个插件“hexo-deployer-git”" class="headerlink" title="首先需要安装一个插件“hexo-deployer-git”"></a>首先需要安装一个插件“hexo-deployer-git”</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<h4 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:computerWalker/computerWalker.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>设置git信息<br>这个配置文件比较重要，一般的设置都在这个文件中，包括博客首页的信息、使用的主题等等</p>
+<h4 id="推送代码到git库当中"><a href="#推送代码到git库当中" class="headerlink" title="推送代码到git库当中"></a>推送代码到git库当中</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>这样就配置好了基本的博客环境，在写博客时候，使用 hexo s 来预览网页效果，编辑完成后使用 hexo d -g 推送到git上，hexo会自动将文件转成网页格式，这是在外网就可以访问自己的博客了，网址就是<a href="https://computerwalker.github.io" target="_blank" rel="noopener">https:// + git 库</a></p>
+<h2 id="在多台电脑上管理博客"><a href="#在多台电脑上管理博客" class="headerlink" title="在多台电脑上管理博客"></a>在多台电脑上管理博客</h2><h4 id="主要思路：在博客的git库当中新建一个分支：hexo"><a href="#主要思路：在博客的git库当中新建一个分支：hexo" class="headerlink" title="主要思路：在博客的git库当中新建一个分支：hexo"></a>主要思路：在博客的git库当中新建一个分支：hexo</h4><h5 id="将博客的源代码放在这个分支当中，并且设置hexo为默认的分支"><a href="#将博客的源代码放在这个分支当中，并且设置hexo为默认的分支" class="headerlink" title="将博客的源代码放在这个分支当中，并且设置hexo为默认的分支"></a>将博客的源代码放在这个分支当中，并且设置hexo为默认的分支</h5><h5 id="这样在其他的电脑上，只要将git库clone下来就可以编辑网页了"><a href="#这样在其他的电脑上，只要将git库clone下来就可以编辑网页了" class="headerlink" title="这样在其他的电脑上，只要将git库clone下来就可以编辑网页了"></a>这样在其他的电脑上，只要将git库clone下来就可以编辑网页了</h5><h5 id="使用hexo-d-g-推送网页到git的master分支上，使用git-push将源代码推送到hexo分支。"><a href="#使用hexo-d-g-推送网页到git的master分支上，使用git-push将源代码推送到hexo分支。" class="headerlink" title="使用hexo d -g 推送网页到git的master分支上，使用git push将源代码推送到hexo分支。"></a>使用hexo d -g 推送网页到git的master分支上，使用git push将源代码推送到hexo分支。</h5><p>在mac电脑上实验了一下，可行的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/08/使用hexo搭建博客/" data-id="cjxcod6gq00055is0v4fzmuc6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/08/test/" class="article-date">
+  <time datetime="2019-06-08T04:06:06.000Z" itemprop="datePublished">2019-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/08/test/">这是一个测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="设置次级目录"><a href="#设置次级目录" class="headerlink" title="设置次级目录"></a>设置次级目录</h2><p>使用##设置次级目录，插入链接测试<a href="https://www.baidu.com/" target="_blank" rel="noopener">百度首页</a></p>
+<h3 id="step-one"><a href="#step-one" class="headerlink" title="step one"></a>step one</h3><p>中文乱码解决：<br>1：在配置中设置语言为中文： zh-CN<br>2:使用sublime编辑器</p>
+<h3 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"new page"</span></span><br></pre></td></tr></table></figure>
+
+<p>建立新的网页</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> <span class="string">'that isvery good！'</span></span><br></pre></td></tr></table></figure>
+
+<p>插入python代码块测试</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">string</span> m_name;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getscore</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> m_score&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setscore</span><span class="params">(<span class="keyword">int</span> score)</span></span>&#123;m_score = score;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> m_score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Student std1;</span><br><span class="line">	std1.m_name = <span class="string">"大橙子"</span>;</span><br><span class="line">	std1.setscore(<span class="number">90</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"student "</span>&lt;&lt;st1.m_name()&lt;&lt;<span class="string">" score is "</span>&lt;&lt;std1.getscore()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>尝试插入图片：<br><img src="/images/%E9%9D%92%E9%93%9C%E5%99%A8.JPG" alt></p>
+<p>使用git新建hexo分支，管理博客源文件<br>这是在git库中修改文件的，然后会使用hexo d -g 提交git库<br>测试是否可以实现，这样在其他的电脑上，只要clone下来git库就可以维护博客了！<br>下面进行实际测试，我会在mac电脑上配置git，然后clone下来git库进行修改和推送<br>问题：<br>1：mac上是否也需要安装node</p>
+<p>实际操作：<br>现在在mac上安装了node、hexo<br>配置好了git<br>现在使用mac电脑修改博客内容，然后使用hexo推送git库，并且将原文件推送到hexo分支上！！！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/08/test/" data-id="cjxcod6gm00025is0gu3c8tsq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/26/ucloud基本使用/">ucloud基本使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/09/遇到的一些知识/">遇到的一些知识</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/c语言链表实例/">c语言链表实例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/使用hexo搭建博客/">使用hexo搭建博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 lingbo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
